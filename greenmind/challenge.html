@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge Lingkungan - Sehat Bumi Sehat Mental</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <style>
+        /* MODAL */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.55);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 40px;
+            width: 350px;
+            border-radius: 18px;
+            text-align: center;
+            animation: pop .25s ease;
+        }
+
+        @keyframes pop {
+            from {
+                transform: scale(0.6);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .reward {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+    </style>
+    </head>
+    <div id="page-wrapper" class="main-wrapper">
+
+        <!-- NAVBAR -->
+        <header class="navbar">
+            <button class="sidebar-toggle" onclick="toggleSidebar()">GM</button>
+            <nav id="navMenu">
+                <a href="index.html">Beranda</a>
+                <a href="lingkungan.html">Lingkungan</a>
+                <a href="mental.html">Mental</a>
+                <a href="challenge.html" class="active">Challenge</a>
+            </nav>
+        </header>
+
+
+        <!-- HERO PLANS -->
+        <section class="plans-hero">
+            <h1 class="plans-title">What are my <span>plans</span> for YEAR?</h1>
+            <div class="tag-container">
+                <div class="tag tag-1">Kurangi Sampah Plastik</div>
+                <div class="tag tag-2">Aksi Go Green Di Sekolah</div>
+                <div class="tag tag-3">Ikut Penanaman Pohon</div>
+                <div class="tag tag-4">Mengedukasi Teman & Keluarga</div>
+            </div>
+            <div class="plans-footer">
+                <span>MADE BY</span>
+                <span>CHALLENGE GOALS →</span>
+            </div>
+        </section>
+
+        <!-- CHALLENGE CARDS -->
+        <main class="content">
+            <section class="cards">
+
+                <div class="card">
+                    <h3>Kurangi Plastik</h3>
+                    <p>Target: 3 hari</p>
+                    <p class="status">Status: Belum dimulai</p>
+                    <button class="btn" onclick="updateChallenge(this)">Mulai Tantangan</button>
+                </div>
+
+                <div class="card">
+                    <h3>Hemat Air</h3>
+                    <p>Target: 5 hari</p>
+                    <p class="status">Status: Belum dimulai</p>
+                    <button class="btn" onclick="updateChallenge(this)">Mulai Tantangan</button>
+                </div>
+
+                <div class="card">
+                    <h3>Tanam Pohon di Rumah</h3>
+                    <p>Target: 1 minggu</p>
+                    <p class="status">Status: Belum dimulai</p>
+                    <button class="btn" onclick="updateChallenge(this)">Mulai Tantangan</button>
+                </div>
+
+            </section>
+        </main>
+
+        <!-- MODAL POP-UP SELAMAT -->
+        <div class="modal" id="congratsModal">
+            <div class="modal-content">
+                <div class="reward">🎉</div>
+                <h2>Selamat!</h2>
+                <p>Kamu berhasil menyelesaikan tantangan 🌿</p>
+                <button class="btn" onclick="closeModal()">Tutup</button>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2025 Sehat Bumi Sehat Mental</p>
+        </footer>
+
+    </div> <!-- WRAPPER -->
+    <!-- SCRIPT -->
+    <script>
+        // Challenge cards logic
+        function updateChallenge(button) {
+            const card = button.parentNode;
+            const statusText = card.querySelector(".status");
+
+            if (statusText.innerText.includes("Belum")) {
+                statusText.innerText = "Status: Berjalan";
+                button.innerText = "Selesaikan";
+            } else if (statusText.innerText.includes("Berjalan")) {
+                statusText.innerText = "Status: Selesai 🎉";
+                button.innerText = "Lihat";
+                showCongrats();
+            } else {
+                alert("Kamu sudah menyelesaikan ini! 🎉");
+            }
+        }
+
+        function showCongrats() {
+            document.getElementById("congratsModal").style.display = "flex";
+        }
+
+        function closeModal() {
+            document.getElementById("congratsModal").style.display = "none";
+        }
+    </script>
+
+</body>
+
+</html>

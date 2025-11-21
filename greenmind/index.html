@@ -1,1 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenMind - Beranda</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body id="mainBody">
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+
+        <nav>
+            <a href="index.html" class="active">Beranda</a>
+            <a href="lingkungan.html">Lingkungan</a>
+            <a href="mental.html">Mental</a>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <section class="hero">
+
+            <!-- Kolom kiri -->
+            <div>
+                <h2>Sehat Bumi, Sehat Mental</h2>
+                <p>Temukan Keseimbangan. Berdaya melawan krisis lingkungan tanpa mengorbankan ketenangan jiwa Anda.</p>
+
+                <div class="hero-btns">
+                    <!-- HANYA TOMBOL MULAI BELAJAR -->
+                    <button class="btn-solid" onclick="location.href='#materi'">
+                        Mulai Belajar
+                    </button>
+
+                </div>
+            </div>
+
+            <!-- Kolom kanan -->
+            <div class="hero-right" style="margin-top:-40px;"> <!-- kotak kuning dinaikkan -->
+
+                <div class="hero-box">
+                    <h4>Webinar Terbaru</h4>
+                    <div class="title">Belajar Menangani Bencana di Jawa Timur</div>
+                    <p>Strategi menghadapi banjir, longsor, dan trauma psikologis bersama relawan & psikolog profesional.</p>
+                </div>
+
+                <div class="hero-box">
+                    <h4>Tip Cepat</h4>
+                    <div class="title">Kurangi plastik sekali pakai</div>
+                </div>
+
+                <div class="hero-box">
+                    <h4>CHALLENGE</h4>
+                    <div class="title">Ikuti tantangan jaga lingkungan</div>
+
+                    <!-- kalau menuju file lain -->
+                    <button onclick="window.location.href='mental.html'">
+                        Mulai Challenge
+                    </button>
+
+                    <!-- kalau menuju section di halaman yang sama -->
+                    <!-- button onclick="location.href='#challenge'">Mulai Challenge</button> -->
+                </div>
+
+
+            </div>
+        </section>
+
+            <section class="materi-section" id="materi">
+                <h2>Pilar Masalah Utama</h2>
+
+                <div class="materi-wrapper">
+
+                    <!-- CARD 1 -->
+                    <div class="materi-card">
+                        <img src="foto4.jpeg" alt="Materi 1">
+                        <h3>2.841 Bencana Alam Selama 2021, Mayoritas di Jatim dan Jabar</h3>
+                        <p>Petugas melihat lokasi bencana longsor yang menerjang Desa Sawaran Kulon, Kecamatan Kedungjajang, Kabupaten Lumajang, Minggu (28/2/2021). Foto: Diskominfo Lumajang</p>
+                    </div>
+
+                    <!-- CARD 2 -->
+                    <div class="materi-card">
+                        <img src="foto3.jpeg" alt="Materi 2">
+                        <h3>Satgas Trauma Healing Polresta Malang Beri Pendampingan Psikologi Bagi Korban Banjir Bandang</h3>
+                        <p>Hujan deras yang mengguyur Kota Malang menimbulkan bencana banjir di beberapa wilayah Kota Malang. Dampak air bah ini menyebabkan kerugian secara materi, fisik, maupun secara psikologis bagi korban masyarakat kota Malang yang mengalami bencana alam</p>
+                    </div>
+
+                    <!-- CARD 3 -->
+                    <div class="materi-card">
+                        <img src="foto5.jpeg" alt="Materi 3">
+                        <h3>Alarm tanda bahaya longsor di lereng Ngetos Nganjuk sudah setahun rusak</h3>
+                        <p>Foto udara suasana pencarian korban tanah longsor di Ngetos, Nganjuk, Jawa Timur, Selasa (16/2/2021). ANTARA FOTO/Zabur Karuru/aww.</p>
+                    </div>
+
+                </div>
+            </section>
+
+
+    </main>
+
+    <footer>
+        <p>© 2025 Sehat Bumi Sehat Mental</p>
+    </footer>
+
+    <!-- SCROLL OTOMATIS -->
+    <script>
+        function scrollToImage() {
+            document.getElementById("belajarImage").scrollIntoView({
+                behavior: "smooth"
+            });
+        }
+    </script>
+    <div className="container-page">
+   <Hero />
+   <MateriSection />
+</div>
+
+
+</body>
+
+</html>
