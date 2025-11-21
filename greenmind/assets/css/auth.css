@@ -1,0 +1,100 @@
+/* ==========================
+   PAGE GLOBAL
+========================== */
+body {
+    margin: 0;
+    padding: 0;
+    background: #eef7ef;
+    font-family: "Segoe UI", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* ==========================
+   CARD
+========================== */
+.auth-card {
+    width: 360px;
+    background: white;
+    padding: 28px;
+    border-radius: 22px;
+    box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+}
+
+/* ==========================
+   HEADER
+========================== */
+.auth-card h2 {
+    margin: 0 0 6px;
+    font-size: 24px;
+    color: #1b4621;
+    font-weight: 600;
+}
+
+.auth-card p {
+    margin-top: 0;
+    margin-bottom: 24px;
+    font-size: 14px;
+    color: #48695a;
+}
+
+/* ==========================
+   INPUT
+========================== */
+.auth-input {
+    width: 100%;
+    padding: 12px 16px;
+    margin-bottom: 14px;
+    border-radius: 12px;
+    border: 1px solid #cbe5c9;
+    background: #f4fbf2;
+    font-size: 14px;
+    outline: none;
+    transition: .25s;
+}
+
+.auth-input:focus {
+    border-color: #2e7d32;
+}
+
+/* ==========================
+   BUTTON
+========================== */
+.auth-btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 4px;
+    background: #2e7d32;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.auth-btn:hover {
+    background: #1b4621;
+}
+
+/* ==========================
+   LINK
+========================== */
+.auth-link {
+    text-align: center;
+    margin-top: 14px;
+    color: #48695a;
+    font-size: 14px;
+}
+
+.auth-link a {
+    color: #2e7d32;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.auth-link a:hover {
+    text-decoration: underline;
+}

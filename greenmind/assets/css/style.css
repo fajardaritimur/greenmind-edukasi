@@ -1,1 +1,884 @@
+/* =========================
+   GLOBAL
+========================= */
+body {
+    font-family: "Segoe UI", sans-serif;
+    background: linear-gradient(135deg, #E9F4FF, #EAFBF0);
+    margin: 0;
+    color: #222;
+    transition: .25s ease;
+}
+html {
+  scroll-behavior: smooth;
+}
 
+/* Dark mode otomatif mengikuti system */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #101418;
+        color: #eaeaea;
+    }
+
+    .navbar {
+        background: #1e242b;
+    }
+
+    .card {
+        background: #222931;
+        color: #fff;
+    }
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+    background: white;
+    border-radius: 0 0 18px 18px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+/* Logo */
+.logo {
+    background: #009d43;
+    padding: 10px 16px;
+    border-radius: 12px;
+    color: white;
+    font-weight: bold;
+}
+
+/* Navbar links */
+.navbar nav {
+    display: flex;
+    gap: 22px;
+}
+
+.navbar nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    transition: .25s;
+}
+
+/* Hover effect */
+.navbar nav a:hover {
+    color: #009d43;
+    transform: translateY(-3px);
+}
+
+/* Link aktif */
+.navbar nav a.active {
+    color: #ff9800;
+    border-bottom: 3px solid #ff9800;
+    padding-bottom: 4px;
+}
+
+/* =========================
+   RESPONSIVE NAVBAR (MOBILE)
+========================= */
+.menu-btn {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Saat layar kecil */
+@media (max-width: 768px) {
+    .navbar nav {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: white;
+        padding: 20px;
+        border-radius: 16px 0 0 16px;
+        flex-direction: column;
+        gap: 14px;
+        display: none;
+        box-shadow: -4px 8px 18px rgba(0,0,0,0.15);
+    }
+
+    .navbar nav.active {
+        display: flex;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+}
+
+/* =========================
+   BUTTON
+========================= */
+.auth-btn .btn-outline {
+    padding: 8px 16px;
+    border: 2px solid #009d43;
+    border-radius: 8px;
+    background: transparent;
+    color: #009d43;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: .25s ease;
+}
+
+.auth-btn .btn-outline:hover {
+    background: #009d43;
+    color: white;
+}
+
+.auth-btn .btn-solid {
+    padding: 8px 16px;
+    border-radius: 8px;
+    background: #009d43;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: .25s ease;
+}
+
+.auth-btn .btn-solid:hover {
+    background: #007735;
+}
+
+/* =========================
+   HERO SECTION (FINAL)
+========================= */
+.hero {
+    margin: 30px auto;                  /* Lebih dekat ke navbar */
+    width: 95%;
+    max-width: 1200px;
+    padding: 55px 50px;
+    background: linear-gradient(135deg, #EAFBF0, #E9F4FF);
+    border-left: 6px solid #0F6E2E;
+    border-radius: 26px;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    transition: .25s;
+}
+
+/* Judul besar */
+.hero h2 {
+    font-size: 46px;
+    font-weight: 800;
+    margin-bottom: 14px;
+    color: #007735;
+    line-height: 1.15;
+}
+
+/* Deskripsi */
+.hero p {
+    font-size: 18px;
+    line-height: 1.65;
+    max-width: 540px;
+    color: #224234;
+}
+
+/* Tombol */
+.hero-btns {
+    margin-top: 28px;
+    display: flex;
+    gap: 18px;
+}
+
+/* Tombol solid */
+.hero-btns .btn-solid {
+     background: #0F6E2E;
+    border: none;
+    padding: 14px 26px;
+    border-radius: 12px;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(0,145,60,0.2);
+    transition: .15s ease;
+}
+
+.hero-btns .btn-solid:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 26px rgba(0,145,60,0.25);
+    background: #0A4F20;
+}
+
+/* Tombol outline */
+.hero-btns .btn-outline {
+    background: transparent;
+    border: 2px solid #009d43;
+    padding: 14px 26px;
+    border-radius: 12px;
+    color: #009d43;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .15s;
+}
+
+.hero-btns .btn-outline:hover {
+    background: #009d43;
+    color: white;
+}
+
+/* =========================
+   STATISTIC / RIGHT CARDS
+========================= */
+.stats {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.stats .card {
+    flex: 1;
+    background: #c9fddf;
+    border-radius: 18px;
+    text-align: center;
+    padding: 22px;
+    font-size: 20px;
+    font-weight: 700;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    transition: .2s ease;
+}
+
+/* Hover biar kerasa hidup */
+.stats .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 28px rgba(0,0,0,0.1);
+}
+
+.stats .card span {
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    opacity: .8;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 850px) {
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 38px 28px;
+        text-align: center;
+    }
+
+    .hero-btns {
+        justify-content: center;
+    }
+
+    .stats {
+        margin-top: 20px;
+        flex-direction: column;
+    }
+}
+
+
+/* =========================
+   STATS CARD
+========================= */
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 30px;
+}
+
+.card-stat {
+    background: #c6ffd1;
+    padding: 16px 24px;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* =========================
+   CONTENT WRAPPER
+========================= */
+.content {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+/* Section header */
+.page-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* =========================
+   CARD GRID (for mental, lingkungan, challenge)
+========================= */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: var(--shadow-soft);
+  border-left: 6px solid var(--green-primary);
+  position: relative;
+  overflow: hidden;
+  transform: translateY(0);
+  transition: .28s ease;
+}
+
+/* Hover animasi */
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 36px rgba(0,0,0,0.12);
+}
+.card h3 {
+    margin-top: 0;
+}
+
+.card button {
+    margin-top: 10px;
+    padding: 8px 14px;
+    border-radius: 10px;
+    border: none;
+    background: #009d43;
+    color: white;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.card button:hover {
+    background: #007735;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  height: 100%;
+  width: 120%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.3),
+    transparent
+  );
+  transition: .6s;
+}
+
+.card:hover::before {
+  left: 100%;
+}
+
+
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    color: #444;
+}
+/* =========================
+   PAGE CONTENT GENERAL
+========================= */
+.page-header h2 {
+    font-size: 32px;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.page-header p {
+    font-size: 18px;
+    max-width: 800px;
+    margin: 10px auto;
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* Card mental page */
+.card ul {
+    margin: 0;
+    padding-left: 20px;
+    line-height: 1.7;
+}
+/* =============================
+   NAVBAR
+============================= */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    background: white;
+    display: flex;
+    align-items: center;
+    padding: 14px 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    z-index: 900;
+     margin-left: var(--sidebar-collapsed);
+    transition: .3s;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: auto;
+    color: #2c7a4b;
+}
+
+.nav-links {
+    display: flex;
+    gap: 24px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: 0.25s;
+}
+
+.nav-links a:hover {
+    color: #2c7a4b;
+}
+
+/* =========================
+   HERO PLANS SECTION
+========================= */
+.plans-hero {
+    width: 95%;
+    max-width: 1100px;
+    margin: 60px auto 40px;
+    padding: 60px 20px;
+    position: relative;
+    text-align: center;     
+    align-items: center;
+}
+
+.plans-title {
+    font-size: 54px;
+    font-weight: 500;
+    font-family: "Georgia", serif;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.plans-title span {
+    font-style: italic;
+    font-weight: 600;
+}
+
+/* Floating tags */
+.tag-container {
+    margin-top: 40px;
+    position: relative;
+    height: 220px;
+    left: 50%;
+    transform: translateX(-50%);   /* ⬅ Ini yang membuat bubble area benar-benar center */
+    width: 100%;
+    max-width: 700px;
+}
+
+.tag {
+    position: absolute;
+    padding: 14px 24px;
+    border-radius: 32px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    white-space: nowrap;
+}
+
+/* Tag warnaa */
+.tag-1 { background: #2e7d32;   top: 0; left: 60%; transform: rotate(-12deg); }
+.tag-2 { background: #4caf50;  top: 40%; left: 5%; transform: rotate(8deg); }
+.tag-3 { background: #66bb6a;  top: 65%; left: 50%; transform: rotate(-4deg); }
+.tag-4 { background: #1b5e20;  top: 20%; left: 25%; transform: rotate(6deg); }
+
+.plans-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.plans-footer span:last-child {
+    border-bottom: 2px solid #000;
+    cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .plans-title {
+        font-size: 38px;
+    }
+
+    .tag-container {
+        height: 260px;
+    }
+
+    .tag {
+        position: static;
+        margin: 10px 0;
+        display: inline-block;
+    }
+}
+/* =========================
+   CHALLENGE SECTION
+========================= */
+.challenge-wrapper {
+    width: 95%;
+    max-width: 1200px;
+    margin: 40px auto 80px;
+    text-align: center;
+}
+
+/* Header Hijau */
+.challenge-header {
+    background: #1b7b3a;
+    color: white;
+    padding: 18px 30px;
+    border-radius: 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 32px;
+}
+
+.challenge-header h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+/* Sub Title */
+.challenge-subtitle {
+    font-size: 22px;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    font-weight: 600;
+    color: #174a2e;
+}
+
+/* Grid Cards */
+.challenge-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+/* Card */
+.challenge-card {
+    background: #ffffff;
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: left;
+    border: 1px solid #e5e5e5;
+}
+
+.challenge-card h3 {
+    margin-top: 0;
+    color: #174a2e;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* Button */
+.btn-challenge {
+    margin-top: 14px;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: #1b7b3a;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.25s;
+}
+
+.btn-challenge:hover {
+    background: #145c2a;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .challenge-subtitle {
+        font-size: 18px;
+    }
+}
+/* =============================
+   NAVBAR
+============================= */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    background: white;
+    display: flex;
+    align-items: center;
+    padding: 14px 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: auto;
+    color: #2c7a4b;
+}
+
+.nav-links {
+    display: flex;
+    gap: 24px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: 0.25s;
+}
+
+.nav-links a:hover {
+    color: #2c7a4b;
+}
+
+/* =========================
+   HERO PLANS SECTION
+========================= */
+.plans-hero {
+    width: 95%;
+    max-width: 1100px;
+    margin: 60px auto 40px;
+    padding: 5px;
+    position: relative;
+}
+
+.plans-title {
+    font-size: 54px;
+    font-weight: 500;
+    font-family: "Georgia", serif;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.plans-title span {
+    font-style: italic;
+    font-weight: 600;
+}
+
+/* Floating tags */
+.tag-container {
+    margin-top: 40px;
+    position: relative;
+    min-height: 220px;
+    height: auto;       /* biar ukurannya mengikuti isi */
+}
+
+
+.tag {
+    position: absolute;
+    padding: 14px 24px;
+    border-radius: 32px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    white-space: nowrap;
+}
+
+/* Tag warnaa */
+.tag-1 { background: #2e7d32;   top: 0; left: 60%; transform: rotate(-12deg); }
+.tag-2 { background: #4caf50;  top: 40%; left: 5%; transform: rotate(8deg); }
+.tag-3 { background: #66bb6a;  top: 65%; left: 50%; transform: rotate(-4deg); }
+.tag-4 { background: #1b5e20;  top: 20%; left: 25%; transform: rotate(6deg); }
+
+.plans-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.plans-footer span:last-child {
+    border-bottom: 2px solid #000;
+    cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .plans-title {
+        font-size: 38px;
+    }
+
+    .tag-container {
+        height: 260px;
+    }
+
+    .tag {
+        position: static;
+        margin: 10px 0;
+        display: inline-block;
+    }
+}
+
+.hero-right {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.hero-box {
+   background: #FFDD75;
+    border-left: 5px solid #0F6E2E;
+    padding: 20px;
+    border-radius: 16px;
+}
+
+.hero-box h4 {
+    margin: 0;
+    font-size: 14px;
+    text-transform: uppercase;
+    opacity: .7;
+}
+
+.hero-box .title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 5px;
+}
+
+.hero-box p {
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+/* tombol tes */
+.hero-box button {
+    margin-top: 18px;
+    background: #009d43;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+}
+/* SECTION */
+.materi-section {
+    width: 100%;
+    max-width: 1200px;   /* batas lebar supaya tidak terlalu melebar */
+    margin: auto;        /* ini yang bikin pas di tengah */
+    padding: 60px 40px;
+    background: #ebf3ed;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px; /* optional biar makin indah */
+}
+
+
+.materi-section h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #0d5728;
+    margin-bottom: 40px;
+}
+
+.materi-wrapper {
+    width: 100%;
+    max-width: 1100px;
+    margin: 40px auto;   /* <– ini yang membuat benar-benar ke tengah */
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+
+    justify-items: center;
+}
+
+/* CARD */
+.materi-card {
+    background: white;
+    border-radius: 18px;
+    padding: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    transition: .25s;
+    border-left: 6px solid #0F6E2E;
+}
+
+.materi-card:hover {
+    transform: translateY(-4px);
+}
+
+/* IMAGE */
+.materi-card img {
+    width: 100%;
+    height: 180px;
+    border-radius: 14px;
+    object-fit: cover;
+}
+
+/* TEXT */
+.materi-card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 12px;
+    color: #0F6E2E;
+}
+
+.materi-card p {
+    font-size: 15px;
+    color: #444;
+    margin: 10px 0 20px;
+}
+
+/* BUTTON */
+.materi-card a {
+    display: inline-block;
+    background: #02a047;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 10px;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* RESPONSIVE */
+@media(max-width: 900px) {
+    .materi-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+
+.container-page {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+* {
+    scroll-behavior: smooth;
+    transition: .25s;
+}
+:root {
+  --green-primary: #0F6E2E;
+  --green-dark: #06461A;
+  --yellow-soft: #FFF4C8;
+  --blue-soft: #EAF7FF;
+  --shadow-soft: 0 8px 25px rgba(0,0,0,0.08);
+}
